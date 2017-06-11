@@ -13,7 +13,7 @@ CP_PID=
 
 
 # kill cp process on exit
-trap 'kill $(jobs -p)' EXIT
+trap 'kill $(jobs -p) > /dev/null 2>&1' EXIT
 
 Usage() {
 
