@@ -84,17 +84,17 @@ if [ -d "$WHERE/$(basename $WHAT)" ]; then
 
     case "$REPLY" in
         "y")
-			echo "Deleting $(basename $WHAT)"
-			rm -rf "$WHERE/$(basename $WHAT)"
-            cp -r $WHAT $WHERE > /dev/null 2>&1 &
+		echo "Deleting $(basename $WHAT)"
+		rm -rf "$WHERE/$(basename $WHAT)"
+            	cp -r $WHAT $WHERE > /dev/null 2>&1 &
 
-            # update size
-            SIZE_0=$(get_dir_size $WHERE)
+            	# update size
+           	SIZE_0=$(get_dir_size $WHERE)
 
-            ;;
+           	;;
         "n"|*) 
-			cp -r -u $WHAT $WHERE > /dev/null 2>&1 &
-            ;;
+		cp -r -u $WHAT $WHERE > /dev/null 2>&1 &
+            	;;
     esac
 else
 	cp -r $WHAT $WHERE > /dev/null 2>&1 &
